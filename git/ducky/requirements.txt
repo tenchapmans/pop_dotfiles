@@ -1,0 +1,16 @@
+appdirs==1.4.4
+ewmh==0.1.6
+hidapi==0.11.0.post2
+MouseInfo==0.1.3
+psutil==5.9.0
+PyAutoGUI==0.9.53
+PyGetWindow==0.0.9
+PyMsgBox==1.0.9
+pyperclip==1.8.2
+PyRect==0.1.4
+PyScreeze==0.1.28
+python-xlib==0.31
+python3-xlib==0.15
+pytweening==1.0.4
+six==1.16.0
+-e git+ssh://git@github.com/dekuNukem/duckyPad.git@8c699d6d48b15eebc057e2408e717fcf57b46099#egg=UNKNOWN&subdirectory=pc_software
