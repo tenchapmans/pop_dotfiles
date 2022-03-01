@@ -1,0 +1,73 @@
+#!/usr/bin/bash
+
+
+echo "-----------------------------------------------------------------------------"
+echo "helper script for duckyPad config and auto profiler"
+echo "-----------------------------------------------------------------------------"
+
+
+echo
+tput setaf 1
+echo "################################################################"
+echo "#####         Choose what you want to run                   ####"
+echo "################################################################"
+tput sgr0
+echo
+echo "Select the correct desktop"
+echo
+echo "0.  Do nothing"
+echo "1.  Start duckyPad Config"
+echo "2.  Start duckyPad Auto Profile Switcher"
+echo "3.  Start both"
+echo "Type the number..."
+
+read CHOICE
+
+case $CHOICE in
+
+    0 )
+      echo
+      echo "########################################"
+      echo "We did nothing as per your request"
+      echo "########################################"
+      echo
+      ;;
+
+    1 )
+            source ~/git/ducky/ducky/bin/activate
+            exec python3 ~/git/ducky/dp_config/duckypad_config.py </dev/null &>/dev/null &
+      echo
+      echo "duckyPad Configurator started"
+      echo 
+      echo "################################################################################"
+      echo "If you get an HID error click OK, hit the reset button then click Connect again."
+      echo "################################################################################"
+      ;;
+    2 )
+            source ~/git/ducky/ducky/bin/activate
+            exec python3 ~/git/ducky/dp_auto/duckypad_autoprofile.py </dev/null &>/dev/null &
+
+      echo
+      echo "duckyPad Auto Profile Switcher"
+      echo
+      echo "################################################################################"
+      echo "If you get an HID error click OK, hit the reset button then click Connect again."
+      echo "################################################################################"
+      ;;
+    3 )
+            source ~/git/ducky/ducky/bin/activate
+            exec python3 ~/git/ducky/dp_config/duckypad_config.py </dev/null &>/dev/null &
+            exec python3 ~/git/ducky/dp_auto/duckypad_autoprofile.py </dev/null &>/dev/null &
+      echo
+      echo "duckyPad Configurator and auto profile switcher started"
+      echo
+      echo "################################################################################"
+      echo "If you get an HID error click OK, hit the reset button then click Connect again."
+      echo "################################################################################"
+      ;;
+    * )
+      echo "#################################"
+      echo "Choose the correct number"
+      echo "#################################"
+      ;;
+esac
